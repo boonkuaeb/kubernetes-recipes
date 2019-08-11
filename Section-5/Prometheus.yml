@@ -1,0 +1,7 @@
+alertmanagers:
+  persistentValue:
+    enable: false
+
+server:
+  persistentValue:
+    enable: false

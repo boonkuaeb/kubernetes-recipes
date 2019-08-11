@@ -1,0 +1,19 @@
+
+# vi ingress-rules.yaml
+
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-test
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: kube-master.labs.local
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: web-01
+            servicePort: 80
